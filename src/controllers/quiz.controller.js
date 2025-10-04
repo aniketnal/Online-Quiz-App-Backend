@@ -22,6 +22,7 @@ const createQuiz = asyncHandler(async (req, res) => {
 });
 
 // Get all available quizzes quizzes (Bonus feature)
+// route to be added
 const getAllQuizzes = asyncHandler(async (req, res) => {
     const quizzes = await Quiz.find().select("title createdBy createdAt");
     return res.status(200).json(
@@ -30,6 +31,7 @@ const getAllQuizzes = asyncHandler(async (req, res) => {
 });
 
 // Get a single quiz by ID
+// route to be added
 const getQuizById = asyncHandler(async (req, res) => {
     const { quizId } = req.params;
 

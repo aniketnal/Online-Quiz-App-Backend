@@ -37,7 +37,8 @@ const submitQuiz = asyncHandler(async (req, res) => {
         }
     });
 
-    const result = await Result.create({
+    // create/save result for quiz
+    await Result.create({
         quiz: quiz._id,
         user: req.user._id,
         score,
@@ -51,7 +52,9 @@ const submitQuiz = asyncHandler(async (req, res) => {
 
 // Get results of logged-in user
 const getUserResults = asyncHandler(async (req, res) => {
+    // gets result for all the quizzes attempted/submitted
     const results = await Result.find({ user: req.user._id })
+        // replaces object id for quiz in result model with actual document. (fields: _id, title) here.
         .populate("quiz", "title");
 
     return res.status(200).json(

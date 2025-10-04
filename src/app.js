@@ -26,10 +26,10 @@ import userRouter from "./routes/user.route.js";
 import quizRouter from "./routes/quiz.route.js"
 
 // routes declaration
-// example url: http://localhost:3000/api/user/register
+// example url: http://localhost:3000/api/user
 app.use("/api/user", userRouter)
 
-// example url: http://localhost:3000/api/quiz/create
+// example url: http://localhost:3000/api/quiz
 app.use("/api/quiz", quizRouter)
 
 export { app }

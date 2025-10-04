@@ -3,7 +3,7 @@ import { ApiError } from "../utils/ApiError.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 import { Quiz } from "../models/quiz.model.js";
 
-// Add a question to a quiz
+// Add a questions to a quiz
 const addQuestionsToQuiz = asyncHandler(async (req, res) => {
     const { quizId } = req.params;
     const { questions } = req.body;
