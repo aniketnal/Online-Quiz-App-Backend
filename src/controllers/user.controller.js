@@ -16,7 +16,7 @@ const generateAccessToken = async (userId) => {
 
 const registerUser = asyncHandler( async (req, res) => {
 
-    const {username, email, password, role} = req.body
+    const { username, email, password, role } = req.body
 
     if([username, email, password].some((field) =>
         field?.trim() === "")) {
