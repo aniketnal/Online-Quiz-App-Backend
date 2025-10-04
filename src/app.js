@@ -1,4 +1,4 @@
-import express from "express";
+import express, { json } from "express";
 import cors from "cors";
 
 const app = express()
@@ -17,5 +17,12 @@ app.use(express.urlencoded({
     extended: true,
     limit: "16kb",
 }));
+
+// routes import
+import userRouter from "./routes/user.route.js";
+
+// routes declaration
+// example url: http://localhost:3000/api/user/register
+app.use("/api/user", userRouter)
 
 export { app }
