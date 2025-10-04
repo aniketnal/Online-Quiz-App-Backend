@@ -3,16 +3,6 @@ import { ApiError } from "../utils/ApiError.js"
 import { ApiResponse } from "../utils/ApiResponse.js"
 import { User } from "../models/user.model.js"
 
-const generateAccessToken = async (userId) => {
-    try {
-        const user = await User.findById(userId);
-        const accessToken = user.generateAccessToken(); 
-
-        return accessToken;
-    } catch (error) {
-        throw new ApiError(500, "Something went wrong while generating access token")
-    }
-}
 
 const registerUser = asyncHandler( async (req, res) => {
 
@@ -61,7 +51,7 @@ const loginUser = asyncHandler( async (req, res) => {
     const isPasswordValid = await user.isPasswordCorrect(password);
     if (!isPasswordValid) throw new ApiError(401, "Invalid credentials");
 
-    const accessToken = await generateAccessToken(user._id);
+    const accessToken = user.generateAccessToken(); 
 
     const loggedInUser = await User.findById(user._id).select(
         "-password"
@@ -85,16 +75,16 @@ const loginUser = asyncHandler( async (req, res) => {
 })
 
 const logoutUser = asyncHandler( async(req, res) => {
-    
+
     const options = {
         httpOnly: true,
         secure: true,
-        maxAge: 24 * 60 * 60 * 1000
     }
 
     return res
     .status(200)
     .clearCookie("accessToken", options)
+    .clearCookie("refreshToken", options)
     .json(
         new ApiResponse(200, "User logged out successfully")
     )

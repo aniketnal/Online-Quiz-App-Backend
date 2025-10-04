@@ -1,12 +1,13 @@
-import mongoose,  { Schema }  from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 const answerSchema = new Schema({
     question: { 
         type: mongoose.Schema.Types.ObjectId, 
+        ref: "Quiz.questions",
         required: true 
     },
     selectedOption: { 
-        type: Number, 
+        type: mongoose.Schema.Types.ObjectId, 
         required: true 
     },
     isCorrect: { 
@@ -31,6 +32,6 @@ const resultSchema = new Schema({
         required: true 
     },
     answers: [answerSchema],
-},
-{ timestamps: true }
-);
+}, { timestamps: true });
+
+export const Result = mongoose.model("Result", resultSchema);

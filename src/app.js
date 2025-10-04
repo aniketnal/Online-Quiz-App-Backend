@@ -1,5 +1,6 @@
-import express, { json } from "express";
+import express from "express";
 import cors from "cors";
+import cookieParser from "cookie-parser";
 
 const app = express()
 
@@ -18,11 +19,17 @@ app.use(express.urlencoded({
     limit: "16kb",
 }));
 
+app.use(cookieParser())
+
 // routes import
 import userRouter from "./routes/user.route.js";
+import quizRouter from "./routes/quiz.route.js"
 
 // routes declaration
 // example url: http://localhost:3000/api/user/register
 app.use("/api/user", userRouter)
+
+// example url: http://localhost:3000/api/quiz/create
+app.use("/api/quiz", quizRouter)
 
 export { app }
