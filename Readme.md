@@ -1,6 +1,6 @@
 # 🧠 Quiz Management System (Backend)
 
-A robust Node.js backend application for managing quizzes with authentication, automatic evaluation, and result tracking.
+- A Node.js + Express + MongoDB backend application for managing quizzes with authentication,        automatic evaluation, and result tracking.
 
 ## 🚀 Features
 
@@ -50,7 +50,6 @@ project-root/
 ├── .env
 ├── .gitignore
 ├── package.json
-```
 
 ## ⚙️ Setup Instructions
 
@@ -58,8 +57,8 @@ Follow these steps to run the project locally:
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/<your-username>/<your-repo-name>.git
-cd <your-repo-name>
+git clone https://github.com/aniketnal/Online-Quiz-App-Backend.git
+cd Online-Quiz-App-Backend
 ```
 
 ### 2️⃣ Install Dependencies
@@ -132,3 +131,5 @@ Centralized using a custom ApiError, ApiResponse and asyncHandler utility to ens
 
 ### 🧪 Assumption about Testing
 Test cases assume that at least one user and one quiz exist in the database before testing routes like "submit quiz" or "get results."
+
+## 
