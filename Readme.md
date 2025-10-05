@@ -19,37 +19,6 @@
 - **Error Handling:** Custom ApiError and ApiResponse utilities
 - **Async Handling:** asyncHandler middleware
 
-## 🧩 Project Structure
-
-project-root/
-├── src/
-│   ├── controllers/
-│   │   ├── user.controller.js
-│   │   ├── question.controller.js
-│   │   ├── quiz.controller.js
-│   │   └── result.controller.js
-│   ├── models/
-│   │   ├── user.model.js
-│   │   ├── quiz.model.js
-│   │   └── result.model.js
-│   ├── routes/
-│   │   ├── user.route.js
-│   │   ├── quiz.route.js
-│   │   └── result.route.js
-│   ├── utils/
-│   │   ├── ApiError.js
-│   │   ├── ApiResponse.js
-│   │   └── asyncHandler.js
-│   ├── middlewares/
-│   │   └── auth.middleware.js
-│   └── db/
-│   │    └── index.js
-│   ├── app.js
-│   ├── index.js
-│   ├── constants.js
-├── .env
-├── .gitignore
-├── package.json
 
 ## ⚙️ Setup Instructions
 
