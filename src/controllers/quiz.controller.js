@@ -21,7 +21,7 @@ const createQuiz = asyncHandler(async (req, res) => {
     );
 });
 
-// Get all available quizzes quizzes (Bonus feature)
+// Get all available quizzes (Bonus feature)
 const getAllQuizzes = asyncHandler(async (req, res) => {
     const quizzes = await Quiz.find().select("title createdBy createdAt");
     return res.status(200).json(

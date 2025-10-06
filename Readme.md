@@ -102,4 +102,4 @@ Centralized using a custom ApiError, ApiResponse and asyncHandler utility to ens
 Test cases assume that at least one user and one quiz exist in the database before testing routes like "submit quiz" or "get results."
 
 ## 🎥 Project Video
-- Coming soon...
+- Google Drive: https://drive.google.com/file/d/1cY_KzWxdQ4AKdEA0CTgPwCVsHBVOVPeT/view?usp=drive_link
